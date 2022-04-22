@@ -9,10 +9,10 @@ function App() {
     console.log("In add list handler");
     FirestoreService.createNewItem(new Date().toISOString())
       .then(() => {
-        console.log("Item added");
+        // console.log("Item added");
       })
       .catch((error) => {
-        console.log("an error ocurred adding new item", error);
+        // console.log("an error ocurred adding new item", error);
       });
   };
 

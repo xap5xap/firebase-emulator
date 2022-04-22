@@ -5,6 +5,10 @@ import userEvent from "@testing-library/user-event";
 
 jest.setTimeout(100000);
 
+export const sleep = (milliseconds) => {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+};
+
 export const wait = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
@@ -20,6 +24,8 @@ describe("prueba", () => {
 
     console.log("Adding one done");
     await user.click(getByRole("button", { name: "Add item to list" }));
+    await sleep(3000);
+
     expect((await findAllByTestId("item")).length).toBe(2);
   });
 });
