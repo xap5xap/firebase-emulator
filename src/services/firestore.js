@@ -20,8 +20,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-console.log("Connected to emulator");
-connectFirestoreEmulator(db, "localhost", 8080);
+console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === "test") {
+  console.log("We are on test env");
+  connectFirestoreEmulator(db, "localhost", 8080);
+}
 
 export const streamGroceryListAll = (callback) => {
   console.log("streamGroceryListAll - 1");
