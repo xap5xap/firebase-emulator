@@ -17,7 +17,17 @@ const firebaseConfig = {
   appId: "1:454753211612:web:aa2eb377650b39cff4d019",
 };
 
-const app = initializeApp(firebaseConfig);
+const firebaseConfigTest = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "demo-project",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+};
+
+console.log("^^^^^^^^ firestore Service - going to initializeApp");
+const app = initializeApp(firebaseConfigTest);
 const db = getFirestore(app);
 
 if (process.env.NODE_ENV === "test") {

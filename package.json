@@ -64,7 +64,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "emulators": "firebase emulators:start --project friendlychat-88adc",
-    "emulators-dontWork": "firebase emulators:start --project demo-project"
+    "emulators-demo": "firebase emulators:start --project demo-project"
   },
   "eslintConfig": {
     "extends": "react-app"
