@@ -20,10 +20,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-console.log("process.env.NODE_ENV", process.env.NODE_ENV);
-
 if (process.env.NODE_ENV === "test") {
-  console.log("We are on test env");
+  console.log("connected to emulator");
   connectFirestoreEmulator(db, "localhost", 8080);
 }
 
